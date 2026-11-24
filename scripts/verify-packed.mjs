@@ -107,7 +107,8 @@ async function verifyNative(directory, tokens, native) {
 
 async function verifyBrowser(directory, tokenVersion) {
   const server = createServer(async (request, response) => {
-    const asset = request.url === '/' ? 'index.html' : /^\/assets\/([\w.-]+\.(?:css|js))$/.exec(request.url)?.[0].slice(1)
+    const path = request.url === '/' ? '/index.html' : request.url
+    const asset = /^\/(?:index\.html|notification-preferences\.html|assets\/[\w.-]+\.(?:css|js))$/.exec(path)?.[0].slice(1)
     if (!asset) return response.writeHead(404).end()
     const mime = asset.endsWith('.css') ? 'text/css' : asset.endsWith('.js') ? 'text/javascript' : 'text/html'
     try {
@@ -129,10 +130,32 @@ async function verifyBrowser(directory, tokenVersion) {
     const errors = []
     page.on('pageerror', (error) => errors.push(error.message))
     await page.goto(`http://127.0.0.1:${address.port}/`)
+    assert.ok(await page.getByRole('heading', { name: 'My Design System' }).isVisible())
+    assert.equal(await page.locator('script, style, link[rel="stylesheet"]').count(), 0)
+
+    await page.getByRole('link', { name: 'Button', exact: true }).click()
+    await page.locator('button#button').waitFor()
+    assert.ok(page.url().endsWith('/notification-preferences.html#button'))
+    await page.getByRole('link', { name: 'Back to catalog' }).click()
+
+    const inputs = page.locator('summary').filter({ hasText: /^Inputs$/ })
+    const switchLink = page.getByRole('link', { name: 'Switch', exact: true })
+    assert.ok(!(await switchLink.isVisible()))
+    await inputs.focus()
+    await page.keyboard.press('Space')
+    await switchLink.click()
+    await page.locator('#switch').waitFor()
+    assert.ok(page.url().endsWith('/notification-preferences.html#switch'))
+
+    await page.getByRole('link', { name: 'Back to catalog' }).click()
+    await page.getByRole('link', { name: 'Notification preferences' }).click()
+    await page.getByRole('heading', { name: 'Notification preferences' }).waitFor()
     const digest = page.getByRole('switch', { name: 'Weekly digest' })
     const save = page.getByRole('button', { name: 'Save preferences' })
     const theme = page.getByRole('switch', { name: 'Dark appearance' })
     assert.ok(await save.isDisabled())
+    await page.keyboard.press('Tab')
+    assert.ok(await page.getByRole('link', { name: 'Back to catalog' }).evaluate((element) => element === document.activeElement))
     await page.keyboard.press('Tab')
     assert.ok(await digest.evaluate((element) => element.matches(':focus-visible')))
     await page.keyboard.press('Space')
@@ -159,7 +182,7 @@ async function verifyBrowser(directory, tokenVersion) {
     assert.ok(await save.isEnabled())
     assert.equal((await style()).color, toRgb(themes.dark.color.action))
     assert.deepEqual(errors, [])
-    console.log('Packed Vue screen: keyboard, save state, responsive viewport, and light/dark styling passed')
+    console.log('Vue catalog and packed demo: navigation, keyboard, save state, and light/dark styling passed')
   } finally {
     await browser?.close()
     await new Promise((done) => server.close(done))

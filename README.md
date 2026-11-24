@@ -15,6 +15,12 @@ pnpm --filter native-pilot start
 
 Run the two app commands in separate terminals. The native app uses Expo SDK 56 and can be opened with a compatible Expo Go client or development build.
 
+The Vue server serves the [catalog](apps/vue-pilot/index.html) at `/`. Button and Switch link to the [Notification preferences example](apps/vue-pilot/notification-preferences.html).
+
+## Add a catalog entry
+
+Add the name under Foundations, Components, Utilities, or Patterns. Link it when a working example exists. Give each finished entry one reference with a live example, a copyable public import where applicable, and the states, interaction, and accessibility rules another implementation should preserve. Keep framework-specific code in its own package. Use those same rules when porting an entry to another framework.
+
 ## Install in another project
 
 Build and verify the archives once from the monorepo. The verifier uses isolated projects, npm, and a browser. Install Playwright's Chromium once with `pnpm exec playwright install chromium`, or set `PLAYWRIGHT_CHANNEL` to an installed Chromium browser channel such as `msedge`.

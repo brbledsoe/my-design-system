@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "apps/vue-pilot/index.html"
+        ],
+        "createdAt": "2026-11-24T16:15:05.035Z",
+        "reason": "User confirmed: the catalog uses plain HTML without CSS. Edge renders h1 at 32px, h2 at 24px, and body text at 16px."
+      }
+    ]
+  }
+}

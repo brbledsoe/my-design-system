@@ -18,19 +18,21 @@ function save() {
 <template>
   <main class="settings" :data-mds-theme="theme">
     <div class="settings__body">
+      <nav aria-label="Catalog"><a href="./">Back to catalog</a></nav>
       <h1>Notification preferences</h1>
       <p>Choose which updates you get by email.</p>
 
       <form aria-label="Email preferences" @submit.prevent="save">
         <h2>Email updates</h2>
         <Switch
+          id="switch"
           v-model="weeklyDigest"
           label="Weekly digest"
           description="Get one email with the highlights from your account."
           @update:model-value="confirmation = ''"
         />
         <div class="settings__actions">
-          <Button type="submit" :disabled="!dirty">Save preferences</Button>
+          <Button id="button" type="submit" :disabled="!dirty">Save preferences</Button>
           <p role="status">{{ confirmation }}</p>
         </div>
       </form>
@@ -60,6 +62,9 @@ body { margin: 0; }
 }
 .settings[data-mds-theme="dark"] { color-scheme: dark; }
 .settings__body { max-width: 560px; margin-inline: auto; }
+.settings nav { margin-block-end: var(--mds-space-medium); }
+.settings nav a { color: var(--mds-color-text); }
+.settings nav a:focus-visible { outline: 2px solid var(--mds-color-focus); outline-offset: 3px; }
 .settings h1 {
   margin: 0;
   font-size: clamp(28px, 6vw, var(--mds-font-title));
