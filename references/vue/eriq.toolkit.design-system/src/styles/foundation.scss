@@ -1,0 +1,15 @@
+@use 'sass:meta';
+
+/*
+ * The foundation remains lower in the cascade even when a bundler emits its
+ * entry stylesheet after dependency chunks. Toolkit shared CSS and SFC styles
+ * stay unlayered, so their package- and component-level decisions win.
+ */
+@layer eq-foundation {
+  @include meta.load-css('../tokens/color.primitive.tokens.css');
+  @include meta.load-css('../tokens/color.role.tokens.css');
+  @include meta.load-css('../tokens/dimension.primitive.tokens.css');
+  @include meta.load-css('../tokens/dimension.role.tokens.css');
+  @include meta.load-css('../tokens/typography.tokens.css');
+  @include meta.load-css('component.scss');
+}

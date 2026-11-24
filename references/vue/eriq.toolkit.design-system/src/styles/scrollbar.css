@@ -1,0 +1,41 @@
+/*
+ * Global native scrollbars. Kept outside `@layer eq-foundation` so they apply as the default
+ * look across the portal; component styles can still override locally when needed.
+ */
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: var(--eq-scrollbar-thumb, #ced4da) var(--eq-scrollbar-track, transparent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--eq-scrollbar-thumb, #ced4da) var(--eq-scrollbar-track, transparent);
+}
+
+@supports selector(::-webkit-scrollbar) {
+  *::-webkit-scrollbar {
+    width: var(--eq-scrollbar-size, 6px);
+    height: var(--eq-scrollbar-size, 6px);
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--eq-scrollbar-track, transparent);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: var(--eq-scrollbar-thumb, #ced4da);
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--eq-scrollbar-thumb-hover, #adb5bd);
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "@eriq/toolkit-design-system",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "style": "./dist/toolkit-design-system.css",
+  "files": [
+    "dist",
+    "src",
+    "example.vue"
+  ],
+  "sideEffects": [
+    "./src/index.ts",
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./composables": "./src/composables/index.ts",
+    "./style.css": "./dist/toolkit-design-system.css",
+    "./example.vue": "./example.vue"
+  },
+  "scripts": {
+    "build": "vue-tsc --noEmit && vite build",
+    "dev": "vite",
+    "format": "prettier --write src/",
+    "test:unit": "vitest run --config vitest.config.ts"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.5",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "sass": "^1.98.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.0",
+    "vue": "^3.5.13",
+    "vue-tsc": "^3.2.5"
+  }
+}

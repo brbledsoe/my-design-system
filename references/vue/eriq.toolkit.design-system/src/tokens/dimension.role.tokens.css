@@ -1,0 +1,74 @@
+/* Spacing */
+:root {
+  --eq-space-0: var(--eq-size-0);
+  --eq-space-2: var(--eq-size-2);
+  --eq-space-4: var(--eq-size-4);
+  --eq-space-6: var(--eq-size-6);
+  --eq-space-8: var(--eq-size-8);
+  --eq-space-10: var(--eq-size-10);
+  --eq-space-12: var(--eq-size-12);
+  --eq-space-16: var(--eq-size-16);
+  --eq-space-20: var(--eq-size-20);
+  --eq-space-24: var(--eq-size-24);
+  --eq-space-28: var(--eq-size-28);
+  --eq-space-32: var(--eq-size-32);
+  --eq-space-36: var(--eq-size-36);
+  --eq-space-40: var(--eq-size-40);
+  --eq-space-48: var(--eq-size-48);
+  --eq-space-64: var(--eq-size-64);
+  --eq-space-80: var(--eq-size-80);
+  --eq-space-96: var(--eq-size-96);
+}
+
+/* Padding */
+:root {
+  --eq-padding-compact: var(--eq-space-8);
+  --eq-padding-standard: var(--eq-space-16);
+  --eq-padding-spacious: var(--eq-space-24);
+}
+
+/* App scale */
+[data-app-scale="tight"] {
+  --eq-app-scale: var(--eq-scale-90);
+}
+
+[data-app-scale="compact"] {
+  --eq-app-scale: var(--eq-scale-95);
+}
+
+[data-app-scale="default"] {
+  --eq-app-scale: var(--eq-scale-100);
+}
+
+[data-app-scale="relaxed"] {
+  --eq-app-scale: var(--eq-scale-105);
+}
+
+[data-app-scale="spacious"] {
+  --eq-app-scale: var(--eq-scale-110);
+}
+
+/* Corner radius */
+:root {
+  --eq-radius-none: var(--eq-radius-0);
+  --eq-radius-xs: var(--eq-radius-2);
+  --eq-radius-sm: var(--eq-radius-4);
+  --eq-radius-md: var(--eq-radius-6);
+  --eq-radius-lg: var(--eq-radius-8);
+  --eq-radius-xl: var(--eq-radius-12);
+  --eq-radius-xxl: var(--eq-radius-16);
+  --eq-radius-round: var(--eq-radius-full);
+
+  /* App-facing aliases (eriq-frontend-whitelabel-colors cheat-sheet) */
+  --eq-radius-square: var(--eq-radius-none);
+  --eq-radius-rounded: var(--eq-radius-md);
+  --eq-radius-pill: var(--eq-radius-round);
+}
+
+/* Lines */
+:root {
+  --eq-border-width: var(--eq-size-1);
+  --eq-border-width-strong: var(--eq-size-2);
+  --eq-focus-width: var(--eq-size-2);
+  --eq-focus-offset: var(--eq-size-2);
+}

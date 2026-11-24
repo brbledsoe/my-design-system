@@ -1,0 +1,308 @@
+/*
+ * Semantic color roles follow the Radix 12-step anatomy:
+ * 1-2 app/subtle surfaces, 3-5 component states, 6-8 borders,
+ * 9-10 solid surfaces, and 11-12 readable text.
+ */
+:root {
+  --eq-surface-app: var(--eq-neutral-1);
+  --eq-surface-panel: var(--eq-neutral-0);
+  --eq-surface-subtle: var(--eq-neutral-2);
+  --eq-surface-component: var(--eq-neutral-3);
+  --eq-surface-component-hover: var(--eq-neutral-4);
+  --eq-surface-component-active: var(--eq-neutral-5);
+  --eq-surface-row-hover: var(--eq-neutral-a3);
+  --eq-border-subtle: var(--eq-neutral-6);
+  --eq-border-default: var(--eq-neutral-7);
+  --eq-border-strong: var(--eq-neutral-8);
+  --eq-surface-solid: var(--eq-neutral-9);
+  --eq-surface-solid-hover: var(--eq-neutral-10);
+  --eq-ink-muted: var(--eq-neutral-11);
+  --eq-ink-default: var(--eq-neutral-12);
+  --eq-surface-disabled: var(--eq-neutral-a3);
+  --eq-border-disabled: var(--eq-neutral-a6);
+  --eq-ink-disabled: var(--eq-neutral-a8);
+  --eq-ink-placeholder: var(--eq-neutral-a9);
+  --eq-focus-ring-neutral: var(--eq-neutral-8);
+  --eq-focus-ring-accent: var(--eq-brand-8);
+  --eq-surface-inverse: var(--eq-neutral-12);
+  --eq-ink-on-inverse: var(--eq-neutral-0);
+
+  /* App-facing aliases (eriq-frontend-whitelabel-colors cheat-sheet) */
+  --eq-panel-bg: var(--eq-surface-panel);
+  --eq-panel-bg-secondary: var(--eq-surface-subtle);
+  --eq-panel-bg-tertiary: var(--eq-surface-component);
+  --eq-panel-border: var(--eq-border-default);
+  --eq-panel-border-muted: var(--eq-border-subtle);
+  --eq-ink-strong: var(--eq-ink-default);
+  --eq-ink: var(--eq-ink-default);
+  --eq-ink-subtle: var(--eq-ink-muted);
+
+  /* Native + custom scrollbars */
+  --eq-scrollbar-size: 6px;
+  --eq-scrollbar-track: transparent;
+  --eq-scrollbar-thumb: var(--eq-border-default);
+  --eq-scrollbar-thumb-hover: var(--eq-ink-muted);
+}
+
+/* Neutral shadows. */
+:root {
+  --eq-shadow-1:
+    inset 0 0 0 1px var(--eq-neutral-a5), inset 0 1.5px 2px 0 var(--eq-neutral-a2),
+    inset 0 1.5px 2px 0 rgb(0 0 0 / 10%);
+  --eq-shadow-2:
+    0 0 0 1px var(--eq-neutral-a3), 0 0 0 0.5px rgb(0 0 0 / 5%), 0 1px 1px 0 var(--eq-neutral-a2),
+    0 2px 1px -1px rgb(0 0 0 / 5%), 0 1px 3px 0 rgb(0 0 0 / 5%);
+  --eq-shadow-3:
+    0 0 0 1px var(--eq-neutral-a3), 0 2px 3px -2px var(--eq-neutral-a3),
+    0 3px 12px -4px rgb(0 0 0 / 10%), 0 4px 16px -8px rgb(0 0 0 / 10%);
+  --eq-shadow-4:
+    0 0 0 1px var(--eq-neutral-a3), 0 8px 40px rgb(0 0 0 / 5%),
+    0 12px 32px -16px var(--eq-neutral-a3);
+  --eq-shadow-5:
+    0 0 0 1px var(--eq-neutral-a3), 0 12px 60px rgb(0 0 0 / 15%),
+    0 12px 32px -16px var(--eq-neutral-a5);
+  --eq-shadow-6:
+    0 0 0 1px var(--eq-neutral-a3), 0 12px 60px rgb(0 0 0 / 15%), 0 16px 64px var(--eq-neutral-a2),
+    0 16px 36px -20px var(--eq-neutral-a7);
+}
+
+/* Accent roles. Whitelabel (styles.php) overrides the brand ramp, the solid fills and the solid ink. */
+:root {
+  --eq-surface-accent-subtle: var(--eq-brand-3);
+  --eq-surface-accent-subtle-hover: var(--eq-brand-4);
+  --eq-surface-accent-subtle-active: var(--eq-brand-5);
+  --eq-border-accent: var(--eq-brand-7);
+  --eq-border-accent-strong: var(--eq-brand-8);
+  --eq-surface-accent-solid: var(--eq-anthracite-solid);
+  --eq-surface-accent-solid-hover: var(--eq-anthracite-solid-hover);
+  --eq-surface-accent-solid-active: var(--eq-brand-9);
+  --eq-ink-accent: var(--eq-brand-11);
+  --eq-ink-accent-strong: var(--eq-brand-12);
+  --eq-ink-on-accent-solid: var(--eq-neutral-0);
+}
+
+/* Status roles. */
+:root {
+  --eq-surface-info-subtle: var(--eq-blue-3);
+  --eq-surface-info-subtle-hover: var(--eq-blue-4);
+  --eq-surface-info-subtle-active: var(--eq-blue-5);
+  --eq-border-info: var(--eq-blue-7);
+  --eq-border-info-strong: var(--eq-blue-8);
+  --eq-surface-info-solid: var(--eq-blue-9);
+  --eq-surface-info-solid-hover: var(--eq-blue-10);
+  --eq-ink-info: var(--eq-blue-11);
+  --eq-ink-info-strong: var(--eq-blue-12);
+  --eq-ink-on-info-solid: var(--eq-neutral-0);
+
+  --eq-surface-success-subtle: var(--eq-lime-3);
+  --eq-surface-success-subtle-hover: var(--eq-green-4);
+  --eq-surface-success-subtle-active: var(--eq-green-5);
+  --eq-border-success: var(--eq-green-7);
+  --eq-border-success-strong: var(--eq-green-8);
+  --eq-surface-success-solid: var(--eq-green-9);
+  --eq-surface-success-solid-hover: var(--eq-green-10);
+  --eq-ink-success: var(--eq-lime-12);
+  --eq-ink-success-strong: var(--eq-lime-12);
+  --eq-ink-on-success-solid: var(--eq-neutral-0);
+
+  --eq-surface-warning-subtle: var(--eq-amber-3);
+  --eq-surface-warning-subtle-hover: var(--eq-amber-4);
+  --eq-surface-warning-subtle-active: var(--eq-amber-5);
+  --eq-border-warning: var(--eq-amber-7);
+  --eq-border-warning-strong: var(--eq-amber-8);
+  --eq-surface-warning-solid: var(--eq-amber-9);
+  --eq-surface-warning-solid-hover: var(--eq-amber-10);
+  --eq-ink-warning: var(--eq-amber-11);
+  --eq-ink-warning-strong: var(--eq-amber-12);
+  --eq-ink-on-warning-solid: var(--eq-neutral-12);
+
+  --eq-surface-danger-subtle: var(--eq-red-3);
+  --eq-surface-danger-subtle-hover: var(--eq-red-4);
+  --eq-surface-danger-subtle-active: var(--eq-red-5);
+  --eq-border-danger: var(--eq-red-7);
+  --eq-border-danger-strong: var(--eq-red-8);
+  --eq-surface-danger-solid: var(--eq-red-9);
+  --eq-surface-danger-solid-hover: var(--eq-red-10);
+  --eq-ink-danger: var(--eq-red-11);
+  --eq-ink-danger-strong: var(--eq-red-12);
+  --eq-ink-on-danger-solid: var(--eq-neutral-0);
+}
+
+/* Decorative roles retain the same anatomy as status colors. */
+:root {
+  --eq-surface-indigo-subtle: var(--eq-indigo-3);
+  --eq-surface-indigo-subtle-hover: var(--eq-indigo-4);
+  --eq-surface-indigo-subtle-active: var(--eq-indigo-5);
+  --eq-border-indigo: var(--eq-indigo-7);
+  --eq-border-indigo-strong: var(--eq-indigo-8);
+  --eq-surface-indigo-solid: var(--eq-indigo-9);
+  --eq-surface-indigo-solid-hover: var(--eq-indigo-10);
+  --eq-ink-indigo: var(--eq-indigo-11);
+  --eq-ink-indigo-strong: var(--eq-indigo-12);
+  --eq-ink-on-indigo-solid: var(--eq-neutral-0);
+
+  --eq-surface-orange-subtle: var(--eq-orange-3);
+  --eq-surface-orange-subtle-hover: var(--eq-orange-4);
+  --eq-surface-orange-subtle-active: var(--eq-orange-5);
+  --eq-border-orange: var(--eq-orange-7);
+  --eq-border-orange-strong: var(--eq-orange-8);
+  --eq-surface-orange-solid: var(--eq-orange-9);
+  --eq-surface-orange-solid-hover: var(--eq-orange-10);
+  --eq-ink-orange: var(--eq-orange-11);
+  --eq-ink-orange-strong: var(--eq-orange-12);
+  --eq-ink-on-orange-solid: var(--eq-neutral-0);
+
+  --eq-surface-mauve-subtle: var(--eq-mauve-3);
+  --eq-surface-mauve-subtle-hover: var(--eq-mauve-4);
+  --eq-surface-mauve-subtle-active: var(--eq-mauve-5);
+  --eq-border-mauve: var(--eq-mauve-7);
+  --eq-border-mauve-strong: var(--eq-mauve-8);
+  --eq-surface-mauve-solid: var(--eq-mauve-9);
+  --eq-surface-mauve-solid-hover: var(--eq-mauve-10);
+  --eq-ink-mauve: var(--eq-mauve-11);
+  --eq-ink-mauve-strong: var(--eq-mauve-12);
+  --eq-ink-on-mauve-solid: var(--eq-neutral-0);
+
+  --eq-surface-sage-subtle: var(--eq-sage-3);
+  --eq-surface-sage-subtle-hover: var(--eq-sage-4);
+  --eq-surface-sage-subtle-active: var(--eq-sage-5);
+  --eq-border-sage: var(--eq-sage-7);
+  --eq-border-sage-strong: var(--eq-sage-8);
+  --eq-surface-sage-solid: var(--eq-sage-9);
+  --eq-surface-sage-solid-hover: var(--eq-sage-10);
+  --eq-ink-sage: var(--eq-sage-11);
+  --eq-ink-sage-strong: var(--eq-sage-12);
+  --eq-ink-on-sage-solid: var(--eq-neutral-0);
+
+  --eq-surface-olive-subtle: var(--eq-olive-3);
+  --eq-surface-olive-subtle-hover: var(--eq-olive-4);
+  --eq-surface-olive-subtle-active: var(--eq-olive-5);
+  --eq-border-olive: var(--eq-olive-7);
+  --eq-border-olive-strong: var(--eq-olive-8);
+  --eq-surface-olive-solid: var(--eq-olive-9);
+  --eq-surface-olive-solid-hover: var(--eq-olive-10);
+  --eq-ink-olive: var(--eq-olive-11);
+  --eq-ink-olive-strong: var(--eq-olive-12);
+  --eq-ink-on-olive-solid: var(--eq-neutral-0);
+
+  --eq-surface-sand-subtle: var(--eq-sand-3);
+  --eq-surface-sand-subtle-hover: var(--eq-sand-4);
+  --eq-surface-sand-subtle-active: var(--eq-sand-5);
+  --eq-border-sand: var(--eq-sand-7);
+  --eq-border-sand-strong: var(--eq-sand-8);
+  --eq-surface-sand-solid: var(--eq-sand-9);
+  --eq-surface-sand-solid-hover: var(--eq-sand-10);
+  --eq-ink-sand: var(--eq-sand-11);
+  --eq-ink-sand-strong: var(--eq-sand-12);
+  --eq-ink-on-sand-solid: var(--eq-neutral-0);
+
+  --eq-surface-gold-subtle: var(--eq-gold-3);
+  --eq-surface-gold-subtle-hover: var(--eq-gold-4);
+  --eq-surface-gold-subtle-active: var(--eq-gold-5);
+  --eq-border-gold: var(--eq-gold-7);
+  --eq-border-gold-strong: var(--eq-gold-8);
+  --eq-surface-gold-solid: var(--eq-gold-9);
+  --eq-surface-gold-solid-hover: var(--eq-gold-10);
+  --eq-ink-gold: var(--eq-gold-11);
+  --eq-ink-gold-strong: var(--eq-gold-12);
+  --eq-ink-on-gold-solid: var(--eq-neutral-0);
+
+  --eq-surface-bronze-subtle: var(--eq-bronze-3);
+  --eq-surface-bronze-subtle-hover: var(--eq-bronze-4);
+  --eq-surface-bronze-subtle-active: var(--eq-bronze-5);
+  --eq-border-bronze: var(--eq-bronze-7);
+  --eq-border-bronze-strong: var(--eq-bronze-8);
+  --eq-surface-bronze-solid: var(--eq-bronze-9);
+  --eq-surface-bronze-solid-hover: var(--eq-bronze-10);
+  --eq-ink-bronze: var(--eq-bronze-11);
+  --eq-ink-bronze-strong: var(--eq-bronze-12);
+  --eq-ink-on-bronze-solid: var(--eq-neutral-0);
+
+  --eq-surface-brown-subtle: var(--eq-brown-3);
+  --eq-surface-brown-subtle-hover: var(--eq-brown-4);
+  --eq-surface-brown-subtle-active: var(--eq-brown-5);
+  --eq-border-brown: var(--eq-brown-7);
+  --eq-border-brown-strong: var(--eq-brown-8);
+  --eq-surface-brown-solid: var(--eq-brown-9);
+  --eq-surface-brown-solid-hover: var(--eq-brown-10);
+  --eq-ink-brown: var(--eq-brown-11);
+  --eq-ink-brown-strong: var(--eq-brown-12);
+  --eq-ink-on-brown-solid: var(--eq-neutral-0);
+
+  --eq-surface-mint-subtle: var(--eq-mint-3);
+  --eq-surface-mint-subtle-hover: var(--eq-mint-4);
+  --eq-surface-mint-subtle-active: var(--eq-mint-5);
+  --eq-border-mint: var(--eq-mint-7);
+  --eq-border-mint-strong: var(--eq-mint-8);
+  --eq-surface-mint-solid: var(--eq-mint-9);
+  --eq-surface-mint-solid-hover: var(--eq-mint-10);
+  --eq-ink-mint: var(--eq-mint-11);
+  --eq-ink-mint-strong: var(--eq-mint-12);
+  --eq-ink-on-mint-solid: var(--eq-neutral-12);
+
+  --eq-surface-jade-subtle: var(--eq-jade-3);
+  --eq-surface-jade-subtle-hover: var(--eq-jade-4);
+  --eq-surface-jade-subtle-active: var(--eq-jade-5);
+  --eq-border-jade: var(--eq-jade-7);
+  --eq-border-jade-strong: var(--eq-jade-8);
+  --eq-surface-jade-solid: var(--eq-jade-9);
+  --eq-surface-jade-solid-hover: var(--eq-jade-10);
+  --eq-ink-jade: var(--eq-jade-11);
+  --eq-ink-jade-strong: var(--eq-jade-12);
+  --eq-ink-on-jade-solid: var(--eq-neutral-0);
+
+  --eq-surface-sky-subtle: var(--eq-sky-3);
+  --eq-surface-sky-subtle-hover: var(--eq-sky-4);
+  --eq-surface-sky-subtle-active: var(--eq-sky-5);
+  --eq-border-sky: var(--eq-sky-7);
+  --eq-border-sky-strong: var(--eq-sky-8);
+  --eq-surface-sky-solid: var(--eq-sky-9);
+  --eq-surface-sky-solid-hover: var(--eq-sky-10);
+  --eq-ink-sky: var(--eq-sky-11);
+  --eq-ink-sky-strong: var(--eq-sky-12);
+  --eq-ink-on-sky-solid: var(--eq-neutral-12);
+
+  --eq-surface-iris-subtle: var(--eq-iris-3);
+  --eq-surface-iris-subtle-hover: var(--eq-iris-4);
+  --eq-surface-iris-subtle-active: var(--eq-iris-5);
+  --eq-border-iris: var(--eq-iris-7);
+  --eq-border-iris-strong: var(--eq-iris-8);
+  --eq-surface-iris-solid: var(--eq-iris-9);
+  --eq-surface-iris-solid-hover: var(--eq-iris-10);
+  --eq-ink-iris: var(--eq-iris-11);
+  --eq-ink-iris-strong: var(--eq-iris-12);
+  --eq-ink-on-iris-solid: var(--eq-neutral-0);
+
+  --eq-surface-violet-subtle: var(--eq-violet-3);
+  --eq-surface-violet-subtle-hover: var(--eq-violet-4);
+  --eq-surface-violet-subtle-active: var(--eq-violet-5);
+  --eq-border-violet: var(--eq-violet-7);
+  --eq-border-violet-strong: var(--eq-violet-8);
+  --eq-surface-violet-solid: var(--eq-violet-9);
+  --eq-surface-violet-solid-hover: var(--eq-violet-10);
+  --eq-ink-violet: var(--eq-violet-11);
+  --eq-ink-violet-strong: var(--eq-violet-12);
+  --eq-ink-on-violet-solid: var(--eq-neutral-0);
+
+  --eq-surface-plum-subtle: var(--eq-plum-3);
+  --eq-surface-plum-subtle-hover: var(--eq-plum-4);
+  --eq-surface-plum-subtle-active: var(--eq-plum-5);
+  --eq-border-plum: var(--eq-plum-7);
+  --eq-border-plum-strong: var(--eq-plum-8);
+  --eq-surface-plum-solid: var(--eq-plum-9);
+  --eq-surface-plum-solid-hover: var(--eq-plum-10);
+  --eq-ink-plum: var(--eq-plum-11);
+  --eq-ink-plum-strong: var(--eq-plum-12);
+  --eq-ink-on-plum-solid: var(--eq-neutral-0);
+
+  --eq-surface-pink-subtle: var(--eq-pink-3);
+  --eq-surface-pink-subtle-hover: var(--eq-pink-4);
+  --eq-surface-pink-subtle-active: var(--eq-pink-5);
+  --eq-border-pink: var(--eq-pink-7);
+  --eq-border-pink-strong: var(--eq-pink-8);
+  --eq-surface-pink-solid: var(--eq-pink-9);
+  --eq-surface-pink-solid-hover: var(--eq-pink-10);
+  --eq-ink-pink: var(--eq-pink-11);
+  --eq-ink-pink-strong: var(--eq-pink-12);
+  --eq-ink-on-pink-solid: var(--eq-neutral-0);
+}

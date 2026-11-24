@@ -1,0 +1,76 @@
+/* Primitive dimensions */
+
+/* App Scales or Density */
+:root {
+  --eq-scale-90: 0.9;
+  --eq-scale-95: 0.95;
+  --eq-scale-100: 1;
+  --eq-scale-105: 1.05;
+  --eq-scale-110: 1.1;
+
+  --eq-app-scale: var(--eq-scale-100);
+  --eq-unit: calc(0.25rem * var(--eq-app-scale));
+}
+
+/* Sizes */
+:root {
+  --eq-size-0: 0;
+  --eq-size-1: calc(var(--eq-unit) * 0.25);
+  --eq-size-2: calc(var(--eq-unit) * 0.5);
+  --eq-size-4: calc(var(--eq-unit) * 1);
+  --eq-size-6: calc(var(--eq-unit) * 1.5);
+  --eq-size-8: calc(var(--eq-unit) * 2);
+  --eq-size-10: calc(var(--eq-unit) * 2.5);
+  --eq-size-12: calc(var(--eq-unit) * 3);
+  --eq-size-16: calc(var(--eq-unit) * 4);
+  --eq-size-20: calc(var(--eq-unit) * 5);
+  --eq-size-24: calc(var(--eq-unit) * 6);
+  --eq-size-28: calc(var(--eq-unit) * 7);
+  --eq-size-32: calc(var(--eq-unit) * 8);
+  --eq-size-36: calc(var(--eq-unit) * 9);
+  --eq-size-40: calc(var(--eq-unit) * 10);
+  --eq-size-48: calc(var(--eq-unit) * 12);
+  --eq-size-64: calc(var(--eq-unit) * 16);
+  --eq-size-80: calc(var(--eq-unit) * 20);
+  --eq-size-96: calc(var(--eq-unit) * 24);
+}
+
+/* Size Exceptions to the 4pt rule */
+:root {
+  --eq-size-18: calc(var(--eq-unit) * 4.5);
+  --eq-size-26: calc(var(--eq-unit) * 6.5);
+  --eq-size-44: calc(var(--eq-unit) * 11);
+}
+
+/* Symbol scale */
+:root {
+  --eq-symbol-9: clamp(0.5625rem, calc(0.5625rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-10: clamp(0.5625rem, calc(0.625rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-11: clamp(0.5625rem, calc(0.6875rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-12: clamp(0.5625rem, calc(0.75rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-13: clamp(0.5625rem, calc(0.8125rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-14: clamp(0.5625rem, calc(0.875rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-16: clamp(0.5625rem, calc(1rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-18: clamp(0.5625rem, calc(1.125rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-20: clamp(0.5625rem, calc(1.25rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-24: clamp(0.5625rem, calc(1.5rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-28: clamp(0.5625rem, calc(1.75rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-35: clamp(0.5625rem, calc(2.1875rem * var(--eq-app-scale)), 3.75rem);
+  --eq-symbol-60: clamp(0.5625rem, calc(3.75rem * var(--eq-app-scale)), 3.75rem);
+}
+
+/* Radius scale */
+:root {
+  --eq-radius-0: 0;
+  --eq-radius-2: var(--eq-size-2);
+  --eq-radius-4: var(--eq-size-4);
+  --eq-radius-6: var(--eq-size-6);
+  --eq-radius-8: var(--eq-size-8);
+  --eq-radius-10: var(--eq-size-10);
+  --eq-radius-12: var(--eq-size-12);
+  --eq-radius-16: var(--eq-size-16);
+  --eq-radius-20: var(--eq-size-20);
+  --eq-radius-24: var(--eq-size-24);
+  --eq-radius-32: var(--eq-size-32);
+  --eq-radius-full: 9999px;
+}
