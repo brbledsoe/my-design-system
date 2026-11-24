@@ -1,0 +1,7 @@
+packages:
+  - 'packages/*'
+  - 'apps/*'
+
+# Dependency build scripts permitted by the workspace.
+onlyBuiltDependencies:
+  - esbuild

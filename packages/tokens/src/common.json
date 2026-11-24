@@ -1,0 +1,47 @@
+{
+  "scale": {
+    "small": { "$type": "dimension", "$value": { "value": 8, "unit": "px" } },
+    "medium": { "$type": "dimension", "$value": { "value": 16, "unit": "px" } },
+    "large": { "$type": "dimension", "$value": { "value": 24, "unit": "px" } },
+    "xLarge": { "$type": "dimension", "$value": { "value": 32, "unit": "px" } },
+    "control": { "$type": "dimension", "$value": { "value": 48, "unit": "px" } },
+    "radius": { "$type": "dimension", "$value": { "value": 12, "unit": "px" } },
+    "panelRadius": { "$type": "dimension", "$value": { "value": 24, "unit": "px" } },
+    "body": { "$type": "dimension", "$value": { "value": 16, "unit": "px" } },
+    "title": { "$type": "dimension", "$value": { "value": 32, "unit": "px" } }
+  },
+  "semantic": {
+    "color": {
+      "canvas": { "$type": "color", "$value": "{palette.canvas}" },
+      "surface": { "$type": "color", "$value": "{palette.surface}" },
+      "text": { "$type": "color", "$value": "{palette.text}" },
+      "muted": { "$type": "color", "$value": "{palette.muted}" },
+      "border": { "$type": "color", "$value": "{palette.border}" },
+      "action": { "$type": "color", "$value": "{palette.action}" },
+      "pressed": { "$type": "color", "$value": "{palette.pressed}" },
+      "onAction": { "$type": "color", "$value": "{palette.onAction}" },
+      "disabled": { "$type": "color", "$value": "{palette.disabled}" },
+      "onDisabled": { "$type": "color", "$value": "{palette.onDisabled}" },
+      "focus": { "$type": "color", "$value": "{palette.focus}" },
+      "trackOff": { "$type": "color", "$value": "{palette.trackOff}" },
+      "thumb": { "$type": "color", "$value": "{palette.thumb}" }
+    },
+    "space": {
+      "small": { "$type": "dimension", "$value": "{scale.small}" },
+      "medium": { "$type": "dimension", "$value": "{scale.medium}" },
+      "large": { "$type": "dimension", "$value": "{scale.large}" },
+      "xLarge": { "$type": "dimension", "$value": "{scale.xLarge}" }
+    },
+    "size": {
+      "control": { "$type": "dimension", "$value": "{scale.control}" }
+    },
+    "radius": {
+      "control": { "$type": "dimension", "$value": "{scale.radius}" },
+      "panel": { "$type": "dimension", "$value": "{scale.panelRadius}" }
+    },
+    "font": {
+      "body": { "$type": "dimension", "$value": "{scale.body}" },
+      "title": { "$type": "dimension", "$value": "{scale.title}" }
+    }
+  }
+}

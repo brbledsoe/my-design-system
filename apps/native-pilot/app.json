@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "Notification Preferences",
+    "slug": "design-system-native-pilot",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "dev.mydesignsystem.pilot"
+    },
+    "android": {
+      "package": "dev.mydesignsystem.pilot"
+    }
+  }
+}

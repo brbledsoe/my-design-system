@@ -1,0 +1,17 @@
+{
+  "palette": {
+    "canvas": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 0.9607843137254902, 0.9647058823529412, 0.9411764705882353 ] } },
+    "surface": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 1, 1, 1 ] } },
+    "text": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 0.10588235294117647, 0.1411764705882353, 0.10980392156862745 ] } },
+    "muted": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 0.30980392156862746, 0.3686274509803922, 0.3215686274509804 ] } },
+    "border": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 0.796078431372549, 0.8274509803921568, 0.7843137254901961 ] } },
+    "action": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 0.1411764705882353, 0.3215686274509804, 0.23529411764705882 ] } },
+    "pressed": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 0.08627450980392157, 0.23921568627450981, 0.16470588235294117 ] } },
+    "onAction": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 1, 1, 1 ] } },
+    "disabled": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 0.8980392156862745, 0.9215686274509803, 0.8901960784313725 ] } },
+    "onDisabled": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 0.30980392156862746, 0.3686274509803922, 0.3215686274509804 ] } },
+    "focus": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 0.1411764705882353, 0.38823529411764707, 0.25098039215686274 ] } },
+    "trackOff": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 0.40784313725490196, 0.4666666666666667, 0.4196078431372549 ] } },
+    "thumb": { "$type": "color", "$value": { "colorSpace": "srgb", "components": [ 1, 1, 1 ] } }
+  }
+}

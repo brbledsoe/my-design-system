@@ -1,0 +1,80 @@
+.mds-button {
+  min-block-size: var(--mds-size-control);
+  min-inline-size: var(--mds-size-control);
+  padding: var(--mds-space-small) var(--mds-space-medium);
+  border: 0;
+  border-radius: var(--mds-radius-control);
+  background: var(--mds-color-action);
+  color: var(--mds-color-on-action);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.mds-button:active:enabled { background: var(--mds-color-pressed); }
+.mds-button:disabled {
+  background: var(--mds-color-disabled);
+  color: var(--mds-color-on-disabled);
+  cursor: default;
+}
+
+.mds-switch {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--mds-space-medium);
+  min-block-size: var(--mds-size-control);
+  position: relative;
+  cursor: pointer;
+}
+.mds-switch[data-disabled] { opacity: 0.65; cursor: default; }
+.mds-switch__label { display: block; font-weight: 650; }
+.mds-switch__description { display: block; color: var(--mds-color-muted); font-size: 0.875em; }
+.mds-switch__input {
+  inline-size: 1px;
+  block-size: 1px;
+  position: absolute;
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+
+.mds-switch__track {
+  inline-size: var(--mds-size-control);
+  block-size: 28px;
+  display: flex;
+  align-items: center;
+  padding-inline: 4px;
+  box-sizing: border-box;
+  border-radius: 999px;
+  background: var(--mds-color-track-off);
+}
+
+.mds-switch__track::before {
+  content: "";
+  display: block;
+  inline-size: 20px;
+  block-size: 20px;
+  border-radius: 50%;
+  background: var(--mds-color-thumb);
+}
+
+.mds-switch__input:checked + .mds-switch__track {
+  justify-content: flex-end;
+  background: var(--mds-color-action);
+}
+
+.mds-switch__input:checked + .mds-switch__track::before {
+  background: var(--mds-color-on-action);
+}
+
+.mds-button:focus-visible,
+.mds-switch__input:focus-visible + .mds-switch__track {
+  outline: 2px solid var(--mds-color-focus);
+  outline-offset: 3px;
+}
+
+@media (forced-colors: active) {
+  .mds-switch__track { border: 1px solid ButtonText; }
+  .mds-switch__track::before { background: ButtonText; }
+  .mds-switch__input:checked + .mds-switch__track::before { background: Highlight; }
+}

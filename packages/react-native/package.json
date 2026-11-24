@@ -1,0 +1,30 @@
+{
+  "name": "@my-design-system/react-native",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@my-design-system/tokens": "workspace:^"
+  },
+  "peerDependencies": {
+    "react": "19.2.x",
+    "react-native": "0.85.x"
+  },
+  "devDependencies": {
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "@types/react": "~19.2.2",
+    "typescript": "~6.0.3"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@my-design-system/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./web.css": "./dist/web.css",
+    "./native": {
+      "types": "./dist/native.d.ts",
+      "default": "./dist/native.js"
+    }
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}
