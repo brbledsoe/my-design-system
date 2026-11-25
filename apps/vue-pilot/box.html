@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Box | My Design System</title>
+    <style>
+      pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Catalog"><a href="./">Back to catalog</a></nav>
+      <h1>Box</h1>
+      <p>Wrap content in an HTML container with optional padding from the spacing scale.</p>
+
+      <h2>Example</h2>
+      <div id="box-example"></div>
+
+      <h2>Usage</h2>
+      <pre><code>import { Box } from '@my-design-system/vue'
+import '@my-design-system/vue/styles.css'</code></pre>
+      <pre><code>&lt;Box as="section" padding="medium" aria-label="Overview"&gt;
+  Project overview
+&lt;/Box&gt;</code></pre>
+      <ul>
+        <li><code>as</code> selects the HTML element and defaults to <code>div</code>. Give landmarks an accessible name when appropriate.</li>
+        <li><code>padding</code> applies to all sides. It defaults to <code>none</code> and also accepts <code>small</code>, <code>medium</code>, <code>large</code>, and <code>xLarge</code>.</li>
+      </ul>
+    </main>
+    <script type="module" src="/src/box.ts"></script>
+  </body>
+</html>

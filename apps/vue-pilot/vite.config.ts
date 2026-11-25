@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: [
         fileURLToPath(new URL('./index.html', import.meta.url)),
+        fileURLToPath(new URL('./box.html', import.meta.url)),
         fileURLToPath(new URL('./notification-preferences.html', import.meta.url)),
       ],
     },

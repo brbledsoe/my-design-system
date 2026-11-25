@@ -108,7 +108,7 @@ async function verifyNative(directory, tokens, native) {
 async function verifyBrowser(directory, tokenVersion) {
   const server = createServer(async (request, response) => {
     const path = request.url === '/' ? '/index.html' : request.url
-    const asset = /^\/(?:index\.html|notification-preferences\.html|assets\/[\w.-]+\.(?:css|js))$/.exec(path)?.[0].slice(1)
+    const asset = /^\/(?:index\.html|box\.html|notification-preferences\.html|assets\/[\w.-]+\.(?:css|js))$/.exec(path)?.[0].slice(1)
     if (!asset) return response.writeHead(404).end()
     const mime = asset.endsWith('.css') ? 'text/css' : asset.endsWith('.js') ? 'text/javascript' : 'text/html'
     try {
@@ -132,6 +132,22 @@ async function verifyBrowser(directory, tokenVersion) {
     await page.goto(`http://127.0.0.1:${address.port}/`)
     assert.ok(await page.getByRole('heading', { name: 'My Design System' }).isVisible())
     assert.equal(await page.locator('script, style, link[rel="stylesheet"]').count(), 0)
+
+    await page.getByRole('link', { name: 'Box', exact: true }).click()
+    const basicBox = page.getByText('Zero padding', { exact: true })
+    const namedBox = page.getByRole('region', { name: 'Overview' })
+    await namedBox.waitFor()
+    assert.equal(await basicBox.evaluate((element) => element.tagName), 'DIV')
+    assert.equal(await basicBox.evaluate((element) => getComputedStyle(element).padding), '0px')
+    const boxStyle = await namedBox.evaluate((element) => {
+      const style = getComputedStyle(element)
+      return { tag: element.tagName, padding: style.padding, token: style.getPropertyValue('--mds-space-medium').trim() }
+    })
+    assert.equal(boxStyle.tag, 'SECTION')
+    assert.ok(boxStyle.token)
+    assert.equal(boxStyle.padding, boxStyle.token)
+    assert.equal((await namedBox.textContent())?.trim(), 'Project overview')
+    await page.getByRole('link', { name: 'Back to catalog' }).click()
 
     await page.getByRole('link', { name: 'Button', exact: true }).click()
     await page.locator('button#button').waitFor()
