@@ -15,11 +15,22 @@ pnpm --filter native-pilot start
 
 Run the two app commands in separate terminals. The native app uses Expo SDK 56 and can be opened with a compatible Expo Go client or development build.
 
-The Vue server serves the [catalog](apps/vue-pilot/index.html) at `/`. Button and Switch link to the [Notification preferences example](apps/vue-pilot/notification-preferences.html).
+The Vue server serves the [catalog](apps/vue-pilot/index.html) at `/`, with a [Box reference](apps/vue-pilot/box.html) and the [Notification preferences example](apps/vue-pilot/notification-preferences.html).
 
 ## Add a catalog entry
 
-Add the name under Foundations, Components, Utilities, or Patterns. Link it when a working example exists. Give each finished entry one reference with a live example, a copyable public import where applicable, and the states, interaction, and accessibility rules another implementation should preserve. Keep framework-specific code in its own package. Use those same rules when porting an entry to another framework.
+Start with the closest maintained example. [Box](packages/vue/src/primitives/Box.vue) shows a layout primitive with token-backed styles. [Button](packages/vue/src/Button.vue) and [Switch](packages/vue/src/Switch.vue) show interactive controls. The [Notification preferences pattern](docs/patterns/notification-preferences.md) describes the behavior the Vue and native examples share.
+
+Decide the public props, relevant states, and accessibility behavior before visual polish. Put framework-specific code in its own package and use shared tokens for values both platforms should share.
+
+Keep the catalog homepage plain HTML. Add the name under Foundations, Components, Utilities, or Patterns and link it when a working example exists. Give each finished entry one reference with a live example, a copyable public import where applicable, and the behavior another implementation should preserve. Update that reference when the public behavior changes.
+
+## Verify a change
+
+- For package source changes, run `pnpm build` and `pnpm check`.
+- For token changes, run `pnpm verify:tokens` after building.
+- For Vue catalog routes or examples, run `pnpm --filter vue-pilot build` and open the affected page.
+- For changes to public exports, shipped styles, or public behavior, run `pnpm verify:packed` after building. See [Install in another project](#install-in-another-project) for browser setup.
 
 ## Install in another project
 
