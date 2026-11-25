@@ -2,6 +2,8 @@
 
 The consuming app chooses its package explicitly. A Vue site uses `@my-design-system/vue` on desktop and phones. A React Native app uses `@my-design-system/react-native`. Both draw from `@my-design-system/tokens`.
 
+Find implementation guidance, patterns, and technical reference in the [documentation map](docs/README.md).
+
 ## Run the pilot
 
 Use Node 24 and the pnpm version in `package.json`.
@@ -19,7 +21,7 @@ The Vue server serves the [catalog](apps/vue-pilot/index.html) at `/`, with a [B
 
 ## Add a catalog entry
 
-Start with the closest maintained example. [Box](packages/vue/src/primitives/Box.vue) shows a layout primitive with token-backed styles. [Button](packages/vue/src/Button.vue) and [Switch](packages/vue/src/Switch.vue) show interactive controls. The [Notification preferences pattern](docs/patterns/notification-preferences.md) describes the behavior the Vue and native examples share.
+For Vue component structure and maintained examples, see [Vue architecture](docs/architecture/vue.md). The [Notification preferences pattern](docs/patterns/notification-preferences.md) describes the behavior the Vue and native examples share.
 
 Decide the public props, relevant states, and accessibility behavior before visual polish. Put framework-specific code in its own package and use shared tokens for values both platforms should share.
 
@@ -31,6 +33,7 @@ Keep the catalog homepage plain HTML. Add the name under Foundations, Components
 - For token changes, run `pnpm verify:tokens` after building.
 - For Vue catalog routes or examples, run `pnpm --filter vue-pilot build` and open the affected page.
 - For changes to public exports, shipped styles, or public behavior, run `pnpm verify:packed` after building. See [Install in another project](#install-in-another-project) for browser setup.
+- For documentation changes, verify affected relative links and heading anchors, including links into moved pages.
 
 ## Install in another project
 
@@ -63,4 +66,4 @@ npm install ./vendor/my-design-system-tokens-0.1.0.tgz ./vendor/my-design-system
 import { Button, Switch } from '@my-design-system/react-native'
 ```
 
-See the [interaction pattern](docs/patterns/notification-preferences.md), [compatibility and release guide](docs/compatibility.md), and [architecture plan](.scratch/design-system/spec.md).
+See the [interaction pattern](docs/patterns/notification-preferences.md), [compatibility and release guide](docs/reference/compatibility.md), and [pilot architecture plan](.scratch/design-system/spec.md).

@@ -4,7 +4,7 @@ _Research date: 2026-11-24. Sources are limited to first-party npm, Node.js, Typ
 
 ## Recommendation in one sentence
 
-Start by installing the three packages from local archives. The examples below describe a possible later public release. [Multi-framework pilot plan](../.scratch/design-system/spec.md)
+Start by installing the three packages from local archives. The examples below describe a possible later public release. [Multi-framework pilot plan](../../.scratch/design-system/spec.md)
 
 ## What is actually required
 

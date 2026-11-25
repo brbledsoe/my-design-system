@@ -12,6 +12,18 @@ The peer ranges describe the initial compatibility target. `pnpm-lock.yaml` reco
 
 The `0.1.0` pilot passed clean npm archive installs and type checks for both consumers on Windows with Node 24.13.0 and npm 11.6.2. The Vue production build passed the browser interaction check. Expo produced Android and iOS Hermes bundles from the installed native package. Touch and screen-reader checks still require a device or emulator.
 
+## Vue feature compatibility
+
+The library declares Vue `^3.5.0` as a consumer peer. The lockfile resolves Vue and its SFC compiler to 3.5.46, Vite to 7.3.8, the Vue plugin to 6.0.11, and both vue-tsc and Vue language-core to 3.3.14 with TypeScript 5.9.3 for the Vue package and pilot. See the [library manifest](../../packages/vue/package.json), [pilot manifest](../../apps/vue-pilot/package.json) and [lockfile](../../pnpm-lock.yaml).
+
+| Vue minimum for the documented feature | Features available to the library |
+| --- | --- |
+| [3.3](https://blog.vuejs.org/posts/vue-3-3) | Imported prop types within compiler limits, named tuple emits, typed slots, component options, generic SFCs and `toValue` |
+| [3.4](https://blog.vuejs.org/posts/vue-3-4) | Stable `defineModel` and same-name `v-bind` shorthand |
+| [3.5](https://blog.vuejs.org/posts/vue-3-5) | Reactive props destructuring by default, `useTemplateRef` and `useId` |
+
+Vite compiles the SFCs ahead of distribution and leaves Vue external. Consumers import built ESM, CSS and declarations. Compiler macros and template shorthand are compiled in the library build. Emitted helpers and imported functions such as `useId` still require a compatible consumer runtime. Editor inference and template type checking depend on Vue language tooling. Generic field inference should be checked from a consuming SFC. The feature minimums above describe Vue capabilities. The package support floor is 3.5.0 and the recorded pilot exercised 3.5.46. See the [build configuration](../../packages/vue/vite.config.ts) and [declaration settings](../../packages/vue/tsconfig.json).
+
 ## Try the notification preferences screen
 
 1. Start with Weekly digest turned off. Save preferences is disabled.

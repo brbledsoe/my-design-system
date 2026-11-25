@@ -19,7 +19,7 @@ apps/
   native-pilot/               private Expo app using the public native imports
 docs/
   patterns/                   usage, interaction states and platform differences
-  compatibility.md            exact framework/toolchain versions actually exercised
+  reference/compatibility.md  exact framework/toolchain versions actually exercised
 .changeset/                   per-package release intent and changelogs
 ```
 
