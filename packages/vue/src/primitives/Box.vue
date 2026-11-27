@@ -1,8 +1,17 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
+interface Props {
   as?: 'div' | 'section' | 'article' | 'aside' | 'header' | 'footer' | 'main' | 'nav'
   padding?: 'none' | 'small' | 'medium' | 'large' | 'xLarge'
-}>(), { as: 'div', padding: 'none' })
+}
+
+const {
+  as = 'div',
+  padding = 'none',
+} = defineProps<Props>()
+
+defineSlots<{
+  default?(): any
+}>()
 </script>
 
 <template>

@@ -1,8 +1,17 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
+interface Props {
   disabled?: boolean
   type?: 'button' | 'submit' | 'reset'
-}>(), { type: 'button' })
+}
+
+const {
+  disabled,
+  type = 'button',
+} = defineProps<Props>()
+
+defineSlots<{
+  default?(): any
+}>()
 </script>
 
 <template>

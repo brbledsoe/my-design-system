@@ -1,7 +1,18 @@
 <script setup lang="ts">
 import { useId } from 'vue'
 
-defineProps<{ label: string; description?: string; disabled?: boolean }>()
+interface Props {
+  label: string
+  description?: string
+  disabled?: boolean
+}
+
+const {
+  label,
+  description,
+  disabled,
+} = defineProps<Props>()
+
 const checked = defineModel<boolean>({ required: true })
 const id = useId()
 </script>

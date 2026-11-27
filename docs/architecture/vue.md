@@ -1,6 +1,6 @@
 # Vue architecture
 
-For new component contracts and SFC organization, use the [Vue standards by task](../standards/vue/README.md). The controls below demonstrate package placement and existing behavior. Button and Box use inline prop types with `withDefaults`, and Switch uses an inline prop type. The [props](../standards/vue/component-props.md) and [defaults](../standards/vue/component-defaults.md) standards describe the preferred form for new work.
+For component contracts and SFC organization, use the [Vue standards by task](../standards/vue/README.md). The controls below demonstrate package placement and existing behavior. Button, Box and Switch keep their local `Props` interfaces and defaults beside the public declarations. Button and Box also declare their default slots. The [props](../standards/vue/component-props.md), [defaults](../standards/vue/component-defaults.md) and [slots](../standards/vue/component-slots.md) standards explain these conventions.
 
 ## Source and exports
 
